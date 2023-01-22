@@ -2,6 +2,7 @@ let productos = [
 	{
 		id: "1",
 		categoria: "perifericos",
+		descripcionCorta: "Mouse",
 		title:
 			"Logitech MX Master 3S - Mouse Inalámbrico de Desempeño, Scrolling Ultra-rápido, 8K dpi, Seguimiento sobre Vidrio, Clics Silenciosos, USB-C, Bluetooth, Windows, Linux, Chrome - Grafito",
 		precio: 1439.0,
@@ -25,6 +26,3 @@ export const gFetch = (id) => {
 		}, 3000);
 	});
 };
-{
-	/* <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://m.media-amazon.com/images/I/616ljqKS+xL._AC_SL1500_.jpg" width="150" height="120"></img> */
-}

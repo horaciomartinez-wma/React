@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
 				setProducto(respuestaPromesa);
 			})
 			.finally(() => setLoading(false));
-	}, []);
+	}, [detailId]);
 
 	return (
 		<div class="container py-5">
@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
 				<div class="col-md-8 col-lg-6 col-xl-4">
 					<div class="card text-black">
 						<i class="fab fa-apple fa-lg pt-3 pb-1 px-3"></i>
-						<img src={producto.imagen} class="card-img-top" alt="Apple Computer" />
+						<img src={producto.imagen} class="card-img-top" alt="item imagen" />
 						<div class="card-body">
 							<div class="text-center">
 								<h5 class="card-title">{producto.descripcionCorta}</h5>
