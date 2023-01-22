@@ -14,12 +14,17 @@ export const ItemCount = ({ initial = 1, stock = 10, onAdd }) => {
 			console.log(count);
 		}
 	};
+	const handleOnAdd = () => {
+		onAdd(count);
+	};
 
 	return (
 		<div className="card">
 			<label htmlFor="">Cantidad: {count}</label>
 			<div className="card-body">
-				<button className="btn btn-outline-dark w-25">Agregar al Carrito</button>
+				<button className="btn btn-outline-dark w-25" onClick={handleOnAdd}>
+					Agregar al Carrito
+				</button>
 			</div>
 			<div className="card-footer">
 				<button className="btn btn-outline-dark w-25" onClick={handleSuma}>
