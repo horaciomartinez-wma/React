@@ -1,32 +1,33 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
-
-import { Navbar } from "./components/NavBar";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+//import "./App.css";
+import ItemListContainer from "./components/container/itemListContainer";
+import NavBar from "./components/NavBar/NavBar";
+import "bootstrap/dist/css/bootstrap.min.css";
+import ItemDetailContainer from "./components/container/ItemDetailContainer/ItemDetailContainer";
+// import  components from "./components/container/itemListContainer";
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
-		<div className="App">
-			<Navbar />
-			<div>
-				<a href="https://vitejs.dev" target="_blank">
-					<img src="/vite.svg" className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://reactjs.org" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-				<p>
-					Edit <code>src/App.jsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-		</div>
+		// <div className="App">
+		// 	<h1>Vite + React</h1>
+
+		// 	<Navbar />
+
+		// 	{/* <ItemListContainer /> */}
+		// </div>
+		<BrowserRouter>
+			<>
+				<NavBar />
+				<Routes>
+					<Route path="/" element={<ItemListContainer saludo={"En Construccion..."} />} />
+					<Route path="/categoria/:categoryId" element={<ItemListContainer saludo={"En Construccion..."} />} />
+					<Route path="/detail/:detailId" element={<ItemDetailContainer />} />
+					<Route path="*" element={<Navigate to="/" />} />
+					{/* <ItemListContainer saludo={"En Construccion..."} /> */}
+				</Routes>
+			</>
+		</BrowserRouter>
 	);
 }
 
