@@ -10,6 +10,7 @@ let productos = [
 	{
 		id: "2",
 		categoria: "laptops",
+		descripcionCorta: "Laptop",
 		title:
 			'Acer A315-58-34S8 Laptop Aspire 3 Core i3 / 8GB / 128GB SSD + 1TB HDD/ 15.6" / Gráficos Intel UHD Graphics / Plata',
 		precio: 7999.0,
