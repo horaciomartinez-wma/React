@@ -1,9 +1,22 @@
+import { useState } from "react";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { useCartContext } from "../../../context/CartContext";
+import Intercambiabilidad from "../Intercambiabilidad/Intercambiabilidad";
 import { ItemCount } from "../itemCount/itemCount";
 
 export const ItemDetail = ({ producto }) => {
-	//const onAdd = (cant) =>
+	const { agregarCarrito, cartList } = useCartContext();
+
+	const [isInCart, SetIsInCart] = useState(false);
+	const onAdd = (cant) => {
+		SetIsInCart(true);
+		agregarCarrito(producto, cant);
+	};
+
 	return (
 		<div class="container py-5">
+			<Intercambiabilidad />
 			<div class="row justify-content-center">
 				<div class="col-md-8 col-lg-6 col-xl-4">
 					<div class="card text-black">
@@ -23,7 +36,22 @@ export const ItemDetail = ({ producto }) => {
 					</div>
 				</div>
 			</div>
-			<ItemCount />
+			{producto.stock < 1 ? (
+				<h5>
+					{" "}
+					<center>Articulo Agotado</center>
+				</h5>
+			) : (
+				<div>
+					{isInCart ? (
+						<Link to="/cart">
+							<button>Ir al carrito</button>
+						</Link>
+					) : (
+						<ItemCount onAdd={onAdd} />
+					)}
+				</div>
+			)}
 		</div>
 	);
 };
