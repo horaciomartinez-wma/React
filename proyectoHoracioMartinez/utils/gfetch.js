@@ -3,6 +3,7 @@ let productos = [
 		id: "1",
 		categoria: "perifericos",
 		descripcionCorta: "Mouse",
+		stock: 0,
 		title:
 			"Logitech MX Master 3S - Mouse Inalámbrico de Desempeño, Scrolling Ultra-rápido, 8K dpi, Seguimiento sobre Vidrio, Clics Silenciosos, USB-C, Bluetooth, Windows, Linux, Chrome - Grafito",
 		precio: 1439.0,
@@ -12,6 +13,7 @@ let productos = [
 		id: "2",
 		categoria: "laptops",
 		descripcionCorta: "Laptop",
+		stock: 20,
 		title:
 			'Acer A315-58-34S8 Laptop Aspire 3 Core i3 / 8GB / 128GB SSD + 1TB HDD/ 15.6" / Gráficos Intel UHD Graphics / Plata',
 		precio: 7999.0,
